@@ -10,6 +10,11 @@
 			<a href="{% url 'index' %}">Django</a>
 			<a href="{% url 'admin:index' %}">Admin</a>
 			<a href="{% url 'app-register' %}">Register</a>
+			{% if user.is_authenticated %}
+			<a href="{% url 'logout' %}">Logout</a>
+			{% else %}
+			<a href="{% url 'login' %}">Login</a>
+			{% endif %}
 		</ul>
 	</nav>
 	{% block content %}
