@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from app.forms import UserForm, UserProfileInfoForm
-from django.core.urlresolvers import reserve
+from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from djang.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import  authenticate, login, logout 
 
 # Create your views here.
@@ -19,6 +19,7 @@ def user_logout(request):
 @login_required
 def special(request):
 	return HttpResponse("You are logged in")
+
 
 def register(request):
 	registered = False
@@ -51,8 +52,9 @@ def register(request):
 			"registered": registered
 		})
 
+
 def user_login(request):
-	if request,method == "POST":
+	if request.method == "POST":
 		username = request.POST.get("username")
 		password = request.POST.get("password")
 
@@ -69,5 +71,5 @@ def user_login(request):
 			print("{username} and {password}")
 			return HttpResponse("Invalid login details")
 
-		else:
-			return render(request, "login.html")
+	else:
+		return render(request, "login.html", {})

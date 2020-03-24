@@ -3,9 +3,12 @@
 {% block content %}
 	<div>
 		<h1>Please Login</h1>
-		<form action="{% url 'user_login' %} method="POST>
+		<form action="{% url 'app-login' %}" method="POST">
+	
+			{% csrf_token %}
 			UserName
 			<input type="text" name="username" placeholder="">
+			Password
 			<input type="password" name="password">
 			<input type="submit" name=""
 			value="Login">
