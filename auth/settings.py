@@ -136,7 +136,7 @@ STATICFILES_DIRS = [
 ]
 
 
-#media
+#mediaFile
 
 MEDIA_URl = "/media"
 
