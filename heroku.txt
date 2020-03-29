@@ -1,0 +1,5 @@
+heroku login
+heroku git:remote -a app-name-create-on-HEROKU
+git remote -v
+
+

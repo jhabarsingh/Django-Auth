@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import  authenticate, login, logout 
 
+
 # Create your views here.
 def index(request):
 	return render(request, "index.html")
@@ -18,7 +19,7 @@ def user_logout(request):
 
 @login_required
 def special(request):
-	return HttpResponse("You are logged in")
+	return render(request, "portfolio.html")
 
 
 def register(request):

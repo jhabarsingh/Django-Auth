@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-	{% if registered %}
-	 	<h1>Thank You For Registering</h1>
-	{% else %}
-	<h1>Register Here</h1>
-	<h2>Fill Out The Form</h2>
-	<form enctype="multipart/form-data" method="POST" action="">
-		{% csrf_token %}
-		{{ user_form.as_p }}
-		{{ profile_form.as_p }}
-		<input type="submit" name="">
-	</form>
-	{% endif %}
+	<h1>
+		{% if registered %}
+	 		<h2>Thank You For Registering</h2>
+		{% else %}
+			<h2>Register Here</h2>
+			<h3>Fill Out The Form</h3>
+			<form enctype="multipart/form-data" method="POST" action="">
+				{% csrf_token %}
+				{{ user_form.as_p }}
+				{{ profile_form.as_p }}
+				<input type="submit" name="">
+			</form>
+		{% endif %}
+	</h1>
 {% endblock %}

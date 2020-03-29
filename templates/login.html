@@ -2,7 +2,7 @@
 
 {% block content %}
 	<div>
-		<h1>Please Login</h1>
+		<h1>Please Login
 		<form action="{% url 'app-login' %}" method="POST">
 	
 			{% csrf_token %}
@@ -13,5 +13,6 @@
 			<input type="submit" name=""
 			value="Login">
 		</form>
+		</h1>
 	</div>
 {% endblock %}
